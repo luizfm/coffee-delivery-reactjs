@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../../button";
 import { ButtonContainer } from "../../button/styles";
 
 export const CoffeeCardContainer = styled.div`
@@ -89,7 +90,7 @@ export const PriceTagContainer = styled.div`
   }
 `;
 
-export const RemoveItemButton = styled(ButtonContainer)`
+export const RemoveItemButton = styled(Button)`
   position: absolute;
   top: -0.375rem;
   right: -0.375rem;

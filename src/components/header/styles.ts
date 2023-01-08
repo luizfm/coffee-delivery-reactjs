@@ -15,6 +15,11 @@ export const HeaderContainer = styled.header`
   z-index: 2;
   background-color: ${(props) => props.theme.color.background};
 
+  > a {
+    border-radius: 0.375rem;
+    padding: 0.25rem;
+  }
+
   image {
     flex: 1;
   }
@@ -45,7 +50,7 @@ export const LocaleTag = styled.div`
   }
 `;
 
-export const CartButton = styled(ButtonContainer)`
+export const CartButton = styled(Button)`
   position: relative;
 `;
 

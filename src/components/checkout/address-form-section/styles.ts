@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import Input, { InputProps } from "../../input";
 
-export const AddressFormWrapper = styled.div`
+export const AddressFormSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
@@ -14,13 +14,23 @@ export const AddressFormWrapper = styled.div`
   }
 `;
 
-export const AddressFormTitleContainer = styled.div`
+export const AddressFormSectionTitleContainer = styled.div`
   display: flex;
   column-gap: 0.75rem;
   margin-bottom: 1rem;
+
+  h3 {
+    font-size: ${(props) => props.theme.typography.size.medium};
+    font-weight: ${(props) => props.theme.typography.weight.normal};
+  }
+
+  p {
+    margin-top: 0.125rem;
+    font-size: ${(props) => props.theme.typography.size.small};
+  }
 `;
 
-export const AddressFormContainer = styled.form`
+export const AddressItemsContainer = styled.div`
   ${(props) => css`
     background-color: ${props.theme.color.card};
     border-radius: 0.375rem;
@@ -43,11 +53,11 @@ export const InputsContainer = styled.div`
 `;
 
 type AddressInputProps = InputProps & {
-  gridArea: string;
+  area: string;
 };
 
 export const AddressInput = styled(Input).attrs<AddressInputProps>((props) => ({
-  gridArea: props.gridArea,
+  area: props.area,
 }))<AddressInputProps>`
-  grid-area: ${(props) => props.gridArea};
+  grid-area: ${(props) => props.area};
 `;

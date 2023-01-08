@@ -6,11 +6,12 @@ export enum OrderActionsKind {
   UpdateQuantity = "UPDATE_QUANTITY",
   SetAddress = "SET_ADDRESS",
   SetPaymentType = "SET_PAYMENT_TYPE",
+  ClearState = "CLEAR_STATE",
 }
 
 type ActionPayloadType = {
   type: string;
-  payload: unknown;
+  payload?: unknown;
 };
 
 export enum PaymentTypeKind {
@@ -79,7 +80,6 @@ export const orderReducer = (
     }
     case OrderActionsKind.RemoveFromCart: {
       const id = action.payload as string;
-      console.log(id, state);
       return produce(state, (draft) => {
         const productIndex = draft.products.findIndex(
           (product) => product.id === id
@@ -111,6 +111,11 @@ export const orderReducer = (
       return produce(state, (draft) => {
         draft.paymentType = action.payload as PaymentTypeKind;
       });
+    }
+    case OrderActionsKind.ClearState: {
+      return {
+        ...orderInitialState,
+      };
     }
     default:
       return state;

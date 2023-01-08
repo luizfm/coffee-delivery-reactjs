@@ -5,12 +5,13 @@ export const defaultTheme = {
     subtitle: "#403937",
     text: "#574f4d",
     label: "#8d8686",
-    hover: "#403937",
+    hover: "#D7D5D5",
     button: "#e6e5e5",
     input: "#ededed",
     card: "#f3f2f2",
     background: "#fafafa",
     white: "#ffffff",
+    danger: "#ca0b00",
 
     "yellow-dark": "#c47f17",
     yellow: "#dbac2c",
@@ -34,6 +35,7 @@ export const defaultTheme = {
       giant: "48px",
     },
     weight: {
+      normal: 400,
       bold: 700,
       extraBold: 800,
     },

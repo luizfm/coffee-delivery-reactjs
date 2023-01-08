@@ -1,4 +1,4 @@
-import { MOCKED_PRODUCTS } from "../../../helpers/constants";
+import { PRODUCTS_CATALOG } from "../../../helpers/constants";
 import CoffeeCard from "../coffee-card";
 
 import { CatalogItems, CatalogSectionContainer } from "./styles";
@@ -8,7 +8,7 @@ export function CatalogSection() {
     <CatalogSectionContainer>
       <h2>Nossos cafés</h2>
       <CatalogItems>
-        {MOCKED_PRODUCTS.map((product) => (
+        {PRODUCTS_CATALOG.map((product) => (
           <li key={product.id}>
             <CoffeeCard
               id={product.id}

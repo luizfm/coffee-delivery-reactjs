@@ -17,6 +17,8 @@ export const SelectContainer = styled.div`
     background-color: transparent;
     margin: 0 0.25rem;
     cursor: pointer;
+    border-radius: inherit;
+    padding: 0 0.2rem;
 
     &:hover {
       color: ${(props) => props.theme.color["purple-dark"]};

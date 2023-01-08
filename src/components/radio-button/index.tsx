@@ -1,17 +1,28 @@
-import { forwardRef } from "react";
+import { IconProps } from "phosphor-react";
+import { forwardRef, InputHTMLAttributes } from "react";
 import { RadioButtonContainer } from "./styles";
 
-type RadioButtonProps = {
+type RadioButtonProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
-  icon: string;
+  error?: boolean;
+  disabled?: boolean;
+  icon: React.ForwardRefExoticComponent<
+    IconProps & React.RefAttributes<SVGSVGElement>
+  >;
 };
 
 export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
-  ({ label, icon, ...rest }, ref) => {
+  ({ label, icon, checked, error, disabled, ...rest }, ref) => {
+    const IconComponent = icon;
     return (
-      <RadioButtonContainer>
-        <input type="radio" tabIndex={-1} ref={ref} {...rest} />
-        <img src={icon} alt="" />
+      <RadioButtonContainer checked={checked} disabled={disabled}>
+        <input
+          type="radio"
+          ref={ref}
+          {...rest}
+          {...(disabled && { readOnly: true })}
+        />
+        <IconComponent size={16} />
         <label>{label}</label>
       </RadioButtonContainer>
     );

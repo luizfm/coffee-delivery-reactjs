@@ -1,4 +1,3 @@
-import { useCallback, useState } from "react";
 import { SelectContainer } from "./styles";
 
 interface SelectProps {
@@ -14,9 +13,13 @@ export function Select({
 }: SelectProps) {
   return (
     <SelectContainer>
-      <button onClick={onMinusClick}>–</button>
+      <button onClick={onMinusClick} type="button">
+        –
+      </button>
       {counter}
-      <button onClick={onPlusClick}>+</button>
+      <button onClick={onPlusClick} type="button">
+        +
+      </button>
     </SelectContainer>
   );
 }

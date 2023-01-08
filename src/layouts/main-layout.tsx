@@ -5,7 +5,9 @@ export function MainLayout() {
   return (
     <div>
       <Header />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 }

@@ -71,6 +71,8 @@ export function CoffeeCard({
     removeProductFromCart(id);
   }, []);
 
+  const isAddToCartDisabled = counter === 0;
+
   return (
     <CoffeeCardContainer>
       {isProductOnCart && (
@@ -103,7 +105,12 @@ export function CoffeeCard({
           onMinusClick={onMinusClick}
           onPlusClick={onPlusClick}
         />
-        <Button variant="purpleDark" onClick={onAddProductToCart}>
+        <Button
+          variant="purpleDark"
+          onClick={onAddProductToCart}
+          type="button"
+          disabled={isAddToCartDisabled}
+        >
           <ShoppingCart weight="fill" color="white" />
         </Button>
       </PriceTagContainer>
