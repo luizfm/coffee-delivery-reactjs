@@ -10,6 +10,7 @@ import {
 } from "./styles";
 
 import CoffeeCupImage from "../../../assets/coffee-cup.svg";
+import BackgroundImage from "../../../assets/background.svg";
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 
 const ATTRIBUTE_ITEMS = [
@@ -38,7 +39,9 @@ const ATTRIBUTE_ITEMS = [
 export function HeroSection() {
   return (
     <HeroContainer>
-      <BackgroundImageContainer />
+      <BackgroundImageContainer
+        style={{ backgroundImage: `url(${BackgroundImage})` }}
+      />
       <ContentContainer>
         <div>
           <ProductInfoContainer>

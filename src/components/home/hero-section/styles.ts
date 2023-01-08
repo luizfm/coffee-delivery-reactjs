@@ -5,7 +5,6 @@ export const HeroContainer = styled.section`
 `;
 
 export const BackgroundImageContainer = styled.div`
-  background-image: url("../../../../src/assets/background.svg");
   filter: blur(80px);
   position: absolute;
   inset: 0;
