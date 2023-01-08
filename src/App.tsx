@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { ThemeProvider } from "styled-components";
 import { OrderContextProvider } from "./contexts/order";
@@ -11,12 +11,12 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyles />
-      <BrowserRouter>
+      <HashRouter>
         <OrderContextProvider>
           <Router />
           <ToastContainer position="bottom-right" />
         </OrderContextProvider>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
