@@ -13,11 +13,19 @@ export function Select({
 }: SelectProps) {
   return (
     <SelectContainer>
-      <button onClick={onMinusClick} type="button">
+      <button
+        onClick={onMinusClick}
+        type="button"
+        aria-label="Diminuir quantidade do item"
+      >
         –
       </button>
       {counter}
-      <button onClick={onPlusClick} type="button">
+      <button
+        onClick={onPlusClick}
+        type="button"
+        aria-label="Aumentar quantidade do item"
+      >
         +
       </button>
     </SelectContainer>

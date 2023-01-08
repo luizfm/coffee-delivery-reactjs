@@ -8,11 +8,14 @@ type ButtonBaseProps = {
   children: ReactNode;
   textSize?: BaseButtonProps["textSize"];
   disabled?: boolean;
+  ariaLabel?: string;
   to?: string;
 };
 
 type ButtonAsButton = ButtonBaseProps &
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonBaseProps>;
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonBaseProps> & {
+    ariaLabel: string;
+  };
 
 type ButtonAsLink = ButtonBaseProps &
   Omit<LinkProps, keyof ButtonBaseProps> & {
@@ -25,6 +28,7 @@ export function Button({
   variant = "button",
   disabled,
   children,
+  ariaLabel,
   textSize = "medium",
   className,
   to,
@@ -40,6 +44,7 @@ export function Button({
       >
         <Link
           to={to}
+          aria-label={ariaLabel}
           style={{
             padding: "0.5rem",
             textDecoration: "none",
@@ -61,6 +66,7 @@ export function Button({
       textSize={textSize}
       variant={variant}
       type="button"
+      aria-label={ariaLabel}
       className={className}
       disabled={disabled}
       {...(rest as ButtonAsButton)}

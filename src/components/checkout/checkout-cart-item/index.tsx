@@ -54,7 +54,10 @@ export function CheckoutCartItem({
 
   return (
     <CheckoutCartItemContainer className={className}>
-      <img src={pictureUrl} />
+      <img
+        src={pictureUrl}
+        alt={`${title} visto de cima dentro de uma xícara`}
+      />
       <p>{title}</p>
       <div>
         <Select
@@ -62,7 +65,10 @@ export function CheckoutCartItem({
           onPlusClick={onIncreaseQuantity}
           onMinusClick={onDecreaseQuantity}
         />
-        <Button onClick={handleRemoveItem}>
+        <Button
+          onClick={handleRemoveItem}
+          ariaLabel={`Remover ${title} do carrinho`}
+        >
           <Trash size={16} color={defaultTheme.color.purple} />
           <span>Remover</span>
         </Button>

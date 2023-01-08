@@ -84,7 +84,10 @@ export function CoffeeCard({
           <Trash size={16} />
         </RemoveItemButton>
       )}
-      <img src={pictureUrl} />
+      <img
+        src={pictureUrl}
+        alt={`${title} visto de cima dentro de uma xícara`}
+      />
       <TagsContainer>
         {tags.map((tag) => (
           <TagContainer key={tag}>
@@ -109,6 +112,7 @@ export function CoffeeCard({
           variant="purpleDark"
           onClick={onAddProductToCart}
           type="button"
+          ariaLabel={`Adiciona ${title} ao carrinho`}
           disabled={isAddToCartDisabled}
         >
           <ShoppingCart weight="fill" color="white" />

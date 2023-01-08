@@ -6,12 +6,17 @@ import { EmptyCartContainer } from "./styles";
 export function EmptyCart() {
   return (
     <EmptyCartContainer>
-      <img src={EmptyCartIcon} />
+      <img
+        src={EmptyCartIcon}
+        alt="Uma sacola de compras com um sorriso triste por estar vazia"
+      />
       <p>
         Parece que você não selecionou nenhum item ainda. Que tal retornar para
         a página de itens?
       </p>
-      <Button to="/">Retornar</Button>
+      <Button to="/" ariaLabel="Retorna a página inicial">
+        Retornar
+      </Button>
     </EmptyCartContainer>
   );
 }
