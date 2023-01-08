@@ -56,6 +56,7 @@ export function PaymentFormSection({ className }: PaymentFormSectionProps) {
         <div>
           {PAYMENT_TYPES.map((paymentType) => (
             <RadioButton
+              id={`radio-button-${paymentType.label}`}
               key={paymentType.label}
               label={paymentType.label}
               icon={paymentType.icon}
