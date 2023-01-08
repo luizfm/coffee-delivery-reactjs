@@ -27,7 +27,11 @@ export function Header() {
           <p>Florianópolis, SC</p>
         </LocaleTag>
 
-        <CartButton to="/checkout" variant="yellowLight">
+        <CartButton
+          to="/checkout"
+          variant="yellowLight"
+          ariaLabel="Ir para o checkout"
+        >
           <ShoppingCart
             color={defaultTheme.color["yellow-dark"]}
             size={24}
